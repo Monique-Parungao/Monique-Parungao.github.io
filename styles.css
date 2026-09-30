@@ -141,6 +141,11 @@ h1, h2, h3, h4 { color: var(--black); line-height: 1.1; font-weight: 800; letter
 .case-sub { margin-top: .6rem; font-weight: 600; color: var(--g600); }
 .case-main > p { color: var(--g700); max-width: 44rem; }
 .case h4 { margin: 1.6rem 0 .5rem; font-size: .75rem; text-transform: uppercase; letter-spacing: .16em; color: var(--g500); font-weight: 700; }
+.case-figure { margin: 1.6rem 0 .4rem; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--g200); background: var(--g100); box-shadow: 0 24px 40px -30px rgba(0,0,0,.35); }
+.case-figure img { width: 100%; height: auto; aspect-ratio: 1400 / 788; object-fit: cover; transition: transform .6s var(--ease); }
+.case-figure-portrait { max-width: 420px; }
+.case-figure-portrait img { aspect-ratio: 4 / 5; object-position: 50% 30%; }
+.case:hover .case-figure img { transform: scale(1.02); }
 .chips { display: flex; flex-wrap: wrap; gap: .5rem; }
 .chips li { padding: .4rem .9rem; background: #fff; border: 1px solid var(--g300); border-radius: 999px; font-size: .85rem; font-weight: 600; color: var(--g900); transition: background .2s, color .2s, border-color .2s; }
 .chips li:hover { background: var(--black); color: #fff; border-color: var(--black); }
@@ -368,3 +373,5 @@ a:focus-visible, button:focus-visible { outline-color: var(--accent); }
   .event-highlight { background: #fff !important; border: .75pt solid #999 !important; border-left: 3pt solid #000 !important; border-radius: 4pt; padding: 6pt 10pt; break-inside: avoid; }
   .event-label { color: #444 !important; } .event-highlight p:last-child { color: #000 !important; font-size: 9.5pt; }
 }
+
+@media print { .case-figure { display: none !important; } }
